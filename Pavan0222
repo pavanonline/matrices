@@ -1,17 +1,21 @@
-n=int(input('enter number:'))
+# Program to multiply two matrices using nested loops
 
-for i in range(n):
+X = [[12,7,3],
+    [4 ,5,6],
+    [7 ,8,9]]
 
-    for j in range(i+1):
+Y = [[5,8,1,2],
+    [6,7,3,0],
+    [4,5,9,1]]
 
-        print(j+1,end=" ")
+result = [[0,0,0,0],
+         [0,0,0,0],
+         [0,0,0,0]]
 
-    print("\n")
 
-for i in range(n-1,0,-1):
-
-    for j in range(1,i+1):
-
-        print(j,end=" ")
-
-    print("\n")
+for i in range(len(X)):
+   for j in range(len(Y[0])):
+       for k in range(len(Y)):
+           result[i][j] += X[i][k] * Y[k][j]
+for r in result:
+   print(r)
